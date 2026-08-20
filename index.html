@@ -115,6 +115,8 @@
   </head>
 
   <body>
+    <!-- 追加①: 演出レイヤー（bodyの直下に挿入） -->
+    <div id="effects"></div>
     <h1>おみくじアプリ</h1>
     <p>「おみくじを引く」ボタンを押してみましょう。</p>
 
@@ -122,6 +124,10 @@
       結果を表示する場所。render.ts が id="result" を取得して書き換える。
       ステップ1 を実装するまでは、この固定の文言のまま変わらない。
     -->
+    <!-- 追加②: おみくじ箱（id="result" の直前に挿入） -->
+    <div class="omikuji-box-wrapper">
+      <div id="omikuji-box" class="omikuji-box">⛩️</div>
+    </div>
     <div id="result" class="omikuji-result">ここに結果が出ます</div>
 
     <!-- 操作ボタン。クリック時の処理は main.ts で結びつけている。 -->
