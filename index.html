@@ -105,7 +105,12 @@
       /* 背景・和風スタイル */
       body { background: #f7f4ed radial-gradient(#d3c4ad 15%, transparent 16%) 0 0/30px 30px; transition: background 0.8s; }
       body.kyo-bg { background: #1a1221 !important; }
-
+      
+      /* おみくじ箱＆揺れアニメーション */
+      .omikuji-box-wrapper { text-align: center; margin: 12px 0 -8px; }
+      .omikuji-box { font-size: 56px; display: inline-block; user-select: none; }
+      .omikuji-box.shake { animation: shakeBox 0.4s ease-in-out; }
+      @keyframes shakeBox { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-15deg) translateY(-6px); } 75% { transform: rotate(15deg) translateY(-6px); } }
     </style>
   </head>
 
