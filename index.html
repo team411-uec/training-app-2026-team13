@@ -111,7 +111,28 @@
       .omikuji-box { font-size: 56px; display: inline-block; user-select: none; }
       .omikuji-box.shake { animation: shakeBox 0.4s ease-in-out; }
       @keyframes shakeBox { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-15deg) translateY(-6px); } 75% { transform: rotate(15deg) translateY(-6px); } }
+    
+      /* --- 表示切り替え用クラス --- */
+      .is-hidden { display: none !important; }
+
+      /* --- 箱のサイズアップ（初期表示用） --- */
+      .omikuji-box-wrapper { text-align: center; margin: 20px 0; }
+      .omikuji-box {
+        font-size: 110px;
+        line-height: 1;
+        display: inline-block;
+        user-select: none;
+        font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      }
+      .omikuji-box.shake { animation: shakeBox 0.4s ease-in-out; }
+      @keyframes shakeBox {
+        0%, 100% { transform: rotate(0); }
+        25% { transform: rotate(-15deg) translateY(-6px); }
+        75% { transform: rotate(15deg) translateY(-6px); }
+      }
+
     </style>
+
   </head>
 
   <body>
