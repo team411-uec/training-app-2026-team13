@@ -9,9 +9,9 @@ export type OmikujiResult = "大吉" | "中吉" | "小吉" | "吉" | "末吉" | 
 
 // 各結果を何枚ずつ箱に入れるかの比率。数値は自由に変えてよい。
 export const omikujiRatios: Record<OmikujiResult, number> = {
-  大吉: 5,
+  大吉: 10,
   中吉: 15,
-  小吉: 20,
+  小吉: 15,
   吉: 30,
   末吉: 20,
   凶: 10,
