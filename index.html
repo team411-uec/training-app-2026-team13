@@ -159,7 +159,31 @@
     -->
     <!-- おみくじ箱（アイコン変更） -->
     <div class="omikuji-box-wrapper">
-      <div id="omikuji-box" class="omikuji-box">📦</div>
+      <div id="omikuji-box" class="omikuji-box">
+        <svg width="120" height="140" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- おみくじ棒 -->
+          <rect x="47" y="6" width="6" height="32" rx="2" fill="#e0c097" stroke="#8d6e63" stroke-width="1" transform="rotate(-8 50 20)"/>
+          <text x="44" y="14" font-family="sans-serif" font-size="5" fill="#8c1d0d" font-weight="bold" transform="rotate(-8 50 20)">吉</text>
+    
+          <!-- 筒の蓋（六角形の上面） -->
+          <polygon points="20,25 35,15 65,15 80,25 65,35 35,35" fill="#b82308" stroke="#5c1c11" stroke-width="2"/>
+          <!-- 棒の出し入れ口（中央の穴） -->
+          <ellipse cx="50" cy="25" rx="7" ry="3.5" fill="#3e110c"/>
+    
+          <!-- 筒の側面（六角形の立体表現） -->
+          <!-- 左面 -->
+          <polygon points="20,25 35,35 35,95 20,85" fill="#7a180b" stroke="#5c1c11" stroke-width="1.5"/>
+          <!-- 正面 -->
+          <polygon points="35,35 65,35 65,95 35,95" fill="#a83226" stroke="#5c1c11" stroke-width="1.5"/>
+          <!-- 右面 -->
+          <polygon points="65,35 80,25 80,85 65,95" fill="#8c1d0d" stroke="#5c1c11" stroke-width="1.5"/>
+    
+          <!-- 金色の飾りフチ＆お札ラベル -->
+          <rect x="40" y="43" width="20" height="42" fill="#fffdf9" stroke="#d49b00" stroke-width="1.5" rx="1"/>
+          <text x="50" y="60" font-family="'Hiragino Mincho ProN', 'Yu Mincho', serif" font-size="11" fill="#8c1d0d" text-anchor="middle" font-weight="bold">御</text>
+          <text x="50" y="76" font-family="'Hiragino Mincho ProN', 'Yu Mincho', serif" font-size="11" fill="#8c1d0d" text-anchor="middle" font-weight="bold">籤</text>
+        </svg>
+      </div>
     </div>
 
     <!-- 結果エリア（初期状態は is-hidden で隠す） -->
