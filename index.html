@@ -181,8 +181,6 @@
   <body>
     <!-- 追加①: 演出レイヤー（bodyの直下に挿入） -->
     <div id="effects"></div>
-    <!-- ★ここに鳥居を追加 -->
-    <div class="torii"></div>
     <h1>おみくじアプリ</h1>
     <p>「おみくじを引く」ボタンを押してみましょう。</p>
 
@@ -231,6 +229,8 @@
       <button id="reset-button" onmousedown="this.classList.add('active-dip'); setTimeout(() => this.classList.remove('active-dip'), 200)">リセット</button>
     </div>
 
+    <!-- ★ここに鳥居を追加 -->
+    <div class="torii"></div>
     <!--
       拡張ポイント（ステップ2以降で使う空きエリア）。使わないうちは消してもよい。
         - 残りくじ枚数を出す → <div id="remaining">
