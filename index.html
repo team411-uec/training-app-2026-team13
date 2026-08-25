@@ -142,7 +142,38 @@
       @keyframes fogMove { 0% { transform: scale(1); } 100% { transform: scale(1.2); } }
       .particle { position: absolute; top: -20px; animation: fall linear forwards; }
       @keyframes fall { to { transform: translateY(105vh) rotate(360deg); opacity: 0; } }
+      
+      /* --- Pure CSSで描く鳥居 --- */
+      .torii {
+        width: 140px;
+        height: 120px;
+        margin: 10px auto -10px; /* 中央寄せし、下との余白を調整 */
+        background-image: 
+          linear-gradient(#e63946, #e63946), /* 笠木（一番上） */
+          linear-gradient(#c1121f, #c1121f), /* 島木（二段目） */
+          linear-gradient(#c1121f, #c1121f), /* 額束（中央の小柱） */
+          linear-gradient(#c1121f, #c1121f), /* 貫（横木） */
+          linear-gradient(#c1121f, #c1121f), /* 左柱 */
+          linear-gradient(#c1121f, #c1121f); /* 右柱 */
 
+        background-size: 
+          140px 10px,
+          130px 8px,
+          10px 22px,
+          110px 8px,
+          12px 94px,
+          12px 94px;
+
+        background-position: 
+          center 0px,
+          center 10px,
+          center 18px,
+          center 40px,
+          25px 26px,
+          103px 26px;
+
+      background-repeat: no-repeat;
+      }
     </style>
 
   </head>
@@ -150,6 +181,8 @@
   <body>
     <!-- 追加①: 演出レイヤー（bodyの直下に挿入） -->
     <div id="effects"></div>
+    <!-- ★ここに鳥居を追加 -->
+    <div class="torii"></div>
     <h1>おみくじアプリ</h1>
     <p>「おみくじを引く」ボタンを押してみましょう。</p>
 
