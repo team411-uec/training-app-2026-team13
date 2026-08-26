@@ -6,18 +6,19 @@
 
 import type { OmikujiResult } from "./omikuji";
 const resultElement = document.getElementById("result")!;
-
-// ステップ1（最初の課題）: この関数を実装する。
+const remainingElement = document.getElementById("remaining")!;
+// ステップ1（最初の課題）：この関数を実装する。
 //
 // いまは「引く」ボタンを押すと開発者ツール(F12)の Console に
 // 「引いた結果: 大吉」と出るが、画面の文字は変わらない。
 // この関数の中身が空だからで、ここに DOM 操作を書けば画面に反映される。
 //
 // ヒント:
-//  - 表示先は index.html の id="result" の要素。document.getElementById で取れる。
-//  - 要素の中の文字は textContent で書き換えられる。
-//  - result が null のとき（リセット直後など）は初期メッセージを出す。
-//エフェクトを表示するために関数の中身を差し替えた
+// - 表示先は index.html の id="result" の要素。document.getElementById で...
+// - 要素の中の文字は textContent で書き換えられる。
+// - result が null のとき（リセット直後など）は初期メッセージを出す。
+// エフェクトを表示するために関数の中身を差し替えた
+
 export function renderResult(result: OmikujiResult | null): void {
   const boxWrapper = document.querySelector(".omikuji-box-wrapper");
   const box = document.getElementById("omikuji-box");
@@ -50,17 +51,17 @@ export function renderResult(result: OmikujiResult | null): void {
       playEffect(result);
     }, 400);
 
-    } else {
-      // リセット時：箱を再表示してお札を隠す（nullチェック追加済み）
-      if (boxWrapper) boxWrapper.classList.remove("is-hidden");
-      if (resultElement) {
-        resultElement.textContent = "";
-        resultElement.classList.add("is-hidden");
-      }
+  } else {
+    // リセット時：箱を再表示してお札を隠す（nullチェック追加済み）
+    if (boxWrapper) boxWrapper.classList.remove("is-hidden");
+    if (resultElement) {
+      resultElement.textContent = "";
+      resultElement.classList.add("is-hidden");
+    }
   }
-  }
+}
 
-//演出内容を指定
+// 演出内容を指定
 function playEffect(result: OmikujiResult): void {
   const container = document.getElementById("effects");
   if (!container) return;
@@ -73,6 +74,10 @@ function playEffect(result: OmikujiResult): void {
     document.body.classList.add("kyo-bg");
     container.innerHTML = '<div class="fog"></div>';
   }
+}
+
+export function renderRemainingCount(count: number): void {
+  remainingElement.textContent = `残り：${count}枚`;
 }
 
 function spawn(parent: HTMLElement, type: "gold" | "sakura", count: number): void {
@@ -92,6 +97,7 @@ function spawn(parent: HTMLElement, type: "gold" | "sakura", count: number): voi
     parent.appendChild(p);
   }
 }
+
 // 拡張ポイント（ステップ2以降）。必要になったら関数を足す。
-//  - 履歴をリスト表示する: document.createElement で <li> を作り、<ul id="history"> に足す関数。
-//  - 残りくじ枚数を表示する: omikuji.ts に残数を返す関数を足したうえで表示用の関数を足す。
+// - 履歴をリスト表示する：document.createElement で <li> を作り、<ul id="history"> に足す関数。
+// - 残りくじ枚数を表示する：omikuji.ts に残数を返す関数を足したうえで表示用の関数を足す。
